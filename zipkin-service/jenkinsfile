@@ -19,13 +19,13 @@ node {
 
         stage('Image') {
             dir ('zipkin-service') {
-                def app = docker.build "localhost:5000/account-service:${env.version}"
+                def app = docker.build "localhost:5000/zipkin-service:${env.version}"
                 app.push()
             }
         }
 
         stage ('Run') {
-            docker.image("localhost:5000/account-service:${env.version}").run('-p 2223:2223 -h account --name account --link discovery')
+            docker.image("localhost:5000/zipkin-service:${env.version}").run('-p 2223:2223 -h account --name account --link discovery')
         }
 
         stage ('Final') {
