@@ -1,5 +1,15 @@
-FROM openjdk
-MAINTAINER Piotr Minkowski <piotr.minkowski@gmail.com>
+FROM openjdk:11-jre-slim
+
+# Set the working directory
+WORKDIR /app
+
+# List the contents of the target directory for debugging
+
+# Copy the jar file into the image
 ADD target/zipkin-service.jar zipkin-service.jar
-ENTRYPOINT ["java", "-jar", "/zipkin-service.jar"]
+
 EXPOSE 8767
+
+# Specify the command to run the jar file
+CMD ["java", "-jar", "zipkin-service.jar"]
+
