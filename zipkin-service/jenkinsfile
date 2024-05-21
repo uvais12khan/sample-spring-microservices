@@ -25,7 +25,7 @@ node {
         }
 
         stage ('Run') {
-            docker.image("localhost:5000/zipkin-service:${env.version}").run('-p 2223:2223 -h account --name account --link discovery')
+            docker.image("localhost:5000/zipkin-service:${env.version}").run('-p 8767:8767 -h account --name account --link discovery')
         }
 
         stage ('Final') {
