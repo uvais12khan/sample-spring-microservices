@@ -1,8 +1,5 @@
 FROM openjdk:11-jre-slim
 
-# Set the working directory
-WORKDIR /app
-RUN ls -l target/
 # List the contents of the target directory for debugging
 
 # Copy the jar file into the image
