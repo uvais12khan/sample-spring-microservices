@@ -3,7 +3,7 @@ FROM openjdk:11-jre-slim
 # List the contents of the target directory for debugging
 
 # Copy the jar file into the image
-ADD target/zipkin-service.jar zipkin-service.jar
+ADD zipkin-service.jar zipkin-service.jar
 
 EXPOSE 8767
 
